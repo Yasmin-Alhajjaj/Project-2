@@ -16,6 +16,27 @@ function setColor() {
   ground.style.backgroundColor = ground.style.backgroundColor == "lightgreen" ? "SALMON" : "lightgreen";
 }
 
+// Todo  small list. USED JQUERY.
+$(document).ready(function($) {
+    $('#note').submit(function() {
+        //if input text ,take value input and put in new li.
+        if ($('#input').val() !== '') {
+            var newTask = $('#input').val();
+            var newLi = $('<li>' + newTask + '</li>');
+            // If click on text it remove from list
+            newLi.on('click', function() {
+                $(this).remove();
+            });
+            //take the input and empty the input
+            $('ul').prepend(newLi); 
+            $('#input').val('');
+            return false; 
+        }
+        return false;
+    });
+  });
+
+
 // cth:counter hour.
 // ctm:counter minute.
 // cts:counter second.
@@ -162,21 +183,27 @@ function playon(){
 
     // alarmTime present The input time. 
     var alarmTime = (break_hour) + ":" + (break_minut);
-
+    console.log(alarmTime);
     // currentTime present The localtime.
     setInterval(function(){
        var minutes = date.getMinutes();
-       var hours = date.getHours();
-       if (hours > 12){
-             hours = hours -12;}
-             
+       var hours = (12 - (date.getHours()));
+       //convert military time to standard time
+	   if (hours < 0) {
+		hours = hours * -1;
+	   } else if (hours == 00) {
+		hours = 12;
+	   } else {
+		hours = hours;
+	   }
        var currentTime =hours + ":" + minutes;
+       console.log(currentTime)
        // If alarmTime equal currentTime , the sound play & The value of input time make 0, and the sound stop after 1/2 second.
 	   if (alarmTime == currentTime) {
         sound.play()
         document.getElementById("alarm-h").value = "00";
         document.getElementById("alarm-m").value = "00";
-        setTimeout('sound.pause()', 20000) ;
+        //setTimeout('sound.pause()', 1000) ;
 		}
         
 },1000);
@@ -184,22 +211,7 @@ function playon(){
 
 
 
-// Todo  small list. USED JQUERY.
-$(document).ready(function($) {
-    $('#note').submit(function() {
-        if ($('#input').val() !== '') {
-            var newTask = $('#input').val();
-            var newLi = $('<li>' + newTask + '</li>');
-            newLi.on('click', function() {
-                $(this).remove();
-            });
-            $('ul').prepend(newLi); 
-            $('#input').val('');
-            return false; 
-        }
-    });
-    $('ul').sortable();
-  });
+
 
         
 
