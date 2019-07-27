@@ -20,23 +20,26 @@ function setColor() {
 // ctm:counter minute.
 // cts:counter second.
 //~parseInt~ ignore a string and returns an integer.
-var cth=0;
-var   ctm=0;
-var   cts=0;
-var   start=0;
-//var timer_is_on = 0;
-
 var date = new Date();
+var cth = 0;
+var ctm = 0;
+var cts = 0;
+var start = 0;
 var ret_m=0;
 var ret_h=0;
+var control;
+var parameter;
 
-    var control;
-function down(){
-    
+// This for false input .return defult
+function defltTime(parameter){
+    parameter=60;
+return parameter;
+}
+
+function down(){  
 if(start===0&&document.getElementById("minute")&&document.getElementById("second")&&document.getElementById("hour")){
 
 cth=parseInt(document.getElementById("hour").value);
-
 ctm=parseInt(document.getElementById("minute").value);
 cts=parseInt(document.getElementById("second").value);
 //if input is char , return NaN so this condition make value  equal 0;
@@ -54,102 +57,52 @@ if(cth===0 && ctm===0 && cts===0) {
     document.getElementById('btn2').disabled= true;
     return false;
 }else{
+    // this conditions if input false number.    
+    if(cth>12)
+    cth=12;
+    document.getElementById("hour").value=cth;
 
-if(cth>12)
-cth=12;
-document.getElementById("hour").value=cth;
+    if(ctm>60)
+    document.getElementById("minute").value=defltTime(ctm);
 
-
-if(ctm>60)
-ctm=60;
-document.getElementById("minute").value=ctm;
-
-if(cts>60)
-cts=60;
-document.getElementById("second").value=cts;
-// yasmiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiin
-if(cts<10)
-    cts="0"+cts;
+    if(cts>60)
+    cts=60;
     document.getElementById("second").value=cts;
-    
 
-
-
-
-    cts--;
-    if(cts<0){
-        if(ctm>0){
-            cts=59;
-            ctm--; 
-            }
-
-
+    // CounterDown
+    if(cts<10)
+        cts="0"+cts;
+        document.getElementById("second").value=cts;
+        cts--;
+        if(cts<0){
+            if(ctm>0){
+                cts=59;
+                ctm--;}
             if(ctm<=0&&cth>0){
                 cts=59;
                 ctm=59;
-
-                cth--; 
-                }
-
-                if(ctm>0&&cth>0){
-                    cts=59;
-                    //ctm--;
-                   // cth--; 
-                    }
-
-
-
-
-
-            // else{
-            //     cth=0;
-            //     cts=0;
-            //     ctm=0;
-              
-            // }
-
-
-
-
-
+                cth--;}
+            if(ctm>0&&cth>0){
+                cts=59;}
         }
-
-
-
-
-
-    
-    
-    }
-    
-    document.getElementById('hour').innerHTML = cth;
-
-document.getElementById('minute').innerHTML = ctm;
-  document.getElementById('second').innerHTML = cts;
-  
-  
-  ret_h=date.getHours()+cth;
-  ret_m=date.getMinutes()+ctm+1;
-if(ret_m>60)
-{
-ret_m=ret_m-60;
-ret_h+=1;
 }
-if(ret_h>24)
-{ret_h=(ret_h)-24}
-
-if(ret_h>12)
-{ret_h=(ret_h)-12}
+document.getElementById('hour').innerHTML = cth;
+document.getElementById('minute').innerHTML = ctm;
+document.getElementById('second').innerHTML = cts;
+ // For Return time after adding timer. 
+ret_h=date.getHours()+cth;
+ret_m=date.getMinutes()+ctm+1;
+if(ret_m>60){
+    ret_m=ret_m-60;
+    ret_h+=1;}
+if(ret_h>24){
+    ret_h=(ret_h)-24}
+if(ret_h>12){
+    ret_h=(ret_h)-12}
 
 document.getElementById('return_h').innerHTML = ret_h;
-  document.getElementById('return_m').innerHTML = ret_m;
-  
-
-
-
-   control= setTimeout('down()', 1000);
-
-/////////////////////
+document.getElementById('return_m').innerHTML = ret_m;
+control= setTimeout('down()', 1000);
 }
 
 // This function call when click on START bottun.
@@ -212,7 +165,6 @@ function playon(){
 
     // currentTime present The localtime.
     setInterval(function(){
-       var date = new Date();
        var minutes = date.getMinutes();
        var hours = date.getHours();
        if (hours > 12){
