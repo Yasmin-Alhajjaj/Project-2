@@ -13,7 +13,7 @@ function myTimer() {
 setInterval ( setColor , 900 );
 function setColor() {
   var ground = document.body;
-  ground.style.backgroundColor = ground.style.backgroundColor == "lightgreen" ? "SALMON" : "lightgreen";
+  ground.style.backgroundColor = ground.style.backgroundColor == "lightgreen" ? "#FBCEB1" : "lightgreen";
 }
 
 // Todo  small list. USED JQUERY.
@@ -203,7 +203,7 @@ function playon(){
         sound.play()
         document.getElementById("alarm-h").value = "00";
         document.getElementById("alarm-m").value = "00";
-        //setTimeout('sound.pause()', 1000) ;
+        setTimeout('sound.pause()', 1000) ;
 		}
         
 },1000);

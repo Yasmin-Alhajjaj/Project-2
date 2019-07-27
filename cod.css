@@ -3,7 +3,7 @@
      grid-template-columns: 1fr 5fr
  } 
  img{
-    width:45%;
+    width:20%;
  }
 
  h1{
@@ -86,7 +86,7 @@ input:hover[type='submit'] {
 
 #clockk input{
     height: 35px;
-    
+
 }
 /* Timer */
 
