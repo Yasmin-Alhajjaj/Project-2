@@ -1,4 +1,8 @@
-  
+ body{
+     display: grid;
+     grid-template-columns: 1fr 5fr
+ } 
+
 /* #mainGrid{
     display:grid;
     grid-template-columns: repeat(3,1fr);
@@ -28,13 +32,17 @@
     margin-right: 5%;
 } */
 
+/* body {
+    position: relative;
+} */
 
 /* nooooot */
-#note{ 
+#note1{ 
     background-color: rgb(147, 224, 255);
 
     display: inline-block;
     float: left;
+    height: 500px;
 
  }
 
