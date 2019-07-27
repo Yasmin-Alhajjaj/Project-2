@@ -193,12 +193,12 @@ function Reset(){
 
 // For Alarm Time.
 // ~new Audio~ for access to the properties of audio elements and control it.
-// ~play()~ This function call When click button play.
+// ~playon()~ This function call When click button play.
 var sound = new Audio("https://www.freespecialeffects.co.uk/soundfx/clocks/clock_chime.wav");
-function play(){
+function playon(){
     var break_hour =parseInt( document.getElementById("alarm-h").value);
     var break_minut =parseInt( document.getElementById("alarm-m").value);
-    
+    // if input char in the first ,make the value equal 0.
     if (isNaN(break_hour)){
          break_hour=0; 
          document.getElementById("alarm-h").value = "00";}
@@ -207,45 +207,29 @@ function play(){
          break_minut=0;     
          document.getElementById("alarm-m").value = "00";}
 
+    // alarmTime present The input time. 
     var alarmTime = (break_hour) + ":" + (break_minut);
-    console.log(alarmTime);
-    var clk = document.getElementById('localclock');
 
+    // currentTime present The localtime.
     setInterval(function(){
        var date = new Date();
-	   var hours = (12 - (date.getHours()));
-	   // var hours = date.getHours();
        var minutes = date.getMinutes();
-       var seconds = date.getSeconds();
-	  //convert military time to standard time
-	   if (hours < 0) {
-		hours = hours * -1;
-	   } else if (hours == 00) {
-		hours = 12;
-	   } else {
-		hours = hours;
-	   }
-	   var currentTime = clk.textContent =hours + ":" + minutes;
+       var hours = date.getHours();
+       if (hours > 12){
+             hours = hours -12;}
+             
+       var currentTime =hours + ":" + minutes;
+       // If alarmTime equal currentTime , the sound play & The value of input time make 0, and the sound stop after 1/2 second.
 	   if (alarmTime == currentTime) {
-        ///alert("Hello! I am an alert box!!");
-       // console.log("Hello! I am an alert box!!");
         sound.play()
         document.getElementById("alarm-h").value = "00";
         document.getElementById("alarm-m").value = "00";
-        setTimeout('sound.pause()', 10000) ;
+        setTimeout('sound.pause()', 20000) ;
 		}
         
 },1000);
-
-
-
-
-
-
-
-    
 }
-//}
+
         
 
 
