@@ -1,7 +1,7 @@
  body{
      display: grid;
      grid-template-columns: 1fr 5fr;
-     background-color: rgb(194, 253, 253);
+     background-color: rgb(180, 238, 238);
 
  } 
  img{
@@ -102,7 +102,7 @@ border: 1px solid ;
     width: 50%;
     height: 100px;
     margin: 15px;
-    background-color: rgb(143, 192, 192);
+    background-color: rgb(180, 238, 238);
     /* margin: 0 auto; */
     /* background: url('https://www.goodfreephotos.com/albums/other-photos/angel-entering-heaven-with-light.jpg'); */
 }
