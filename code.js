@@ -19,7 +19,7 @@ function setColor() {
 // cth:counter hour.
 // ctm:counter minute.
 // cts:counter second.
-
+//~parseInt~ ignore a string and returns an integer.
 var cth=0;
 var   ctm=0;
 var   cts=0;
@@ -39,6 +39,7 @@ cth=parseInt(document.getElementById("hour").value);
 
 ctm=parseInt(document.getElementById("minute").value);
 cts=parseInt(document.getElementById("second").value);
+//if input is char , return NaN so this condition make value  equal 0;
 if(isNaN(cth)) cth=0;
 if(isNaN(ctm)) ctm=0;
 if(isNaN(cts)) cts=0;
@@ -49,6 +50,8 @@ start=1;
 }
 if(cth===0 && ctm===0 && cts===0) {
     start = 0;
+    document.getElementById('btn1').disabled= false;
+    document.getElementById('btn2').disabled= true;
     return false;
 }else{
 
@@ -170,6 +173,8 @@ function stopTimer(){
    document.getElementById('btn1').disabled = false;}
 
 // This function call when click on RESET bottun.
+// Return evreything to default.
+// Make the values equal to zero
 function Reset(){
     document.getElementById('return_h').innerHTML = 00;
     document.getElementById('return_m').innerHTML = 00;
@@ -181,63 +186,55 @@ function Reset(){
     document.getElementById('second').disabled= false;
     document.getElementById('minute').disabled= false;
     document.getElementById('hour').disabled= false;
-   
+    
     cth=0;
     ctm=0;
-    cts=0;
-    start=0;
-   // var timer_is_on = 0;
+    cts=0;}
 
-    //var control;
-   ret_h=0;
-   ret_m=0;
-  }
-
-
+// For Alarm Time.
+// ~new Audio~ for access to the properties of audio elements and control it.
+// ~play()~ This function call When click button play.
 var sound = new Audio("https://www.freespecialeffects.co.uk/soundfx/clocks/clock_chime.wav");
 function play(){
+    var break_hour =parseInt( document.getElementById("alarm-h").value);
+    var break_minut =parseInt( document.getElementById("alarm-m").value);
+    
+    if (isNaN(break_hour)){
+         break_hour=0; 
+         document.getElementById("alarm-h").value = "00";}
 
-  var breakh =parseInt( document.getElementById("alarm-h").value);
-  var breakm =parseInt( document.getElementById("br-m").value);
+    if(isNaN(break_minut)){
+         break_minut=0;     
+         document.getElementById("alarm-m").value = "00";}
 
-  var alarmTime = (breakh) + ":" + (breakm);
-  console.log('alarmTime:' + alarmTime);
+    var alarmTime = (break_hour) + ":" + (break_minut);
+    console.log(alarmTime);
+    var clk = document.getElementById('localclock');
 
-  var h2 = document.getElementById('clock');
-
-setInterval(function(){
-
-	var date = new Date();
-	
-	var hours = (12 - (date.getHours()));
-	// var hours = date.getHours();
-	
-	var minutes = date.getMinutes();
-	
-	var seconds = date.getSeconds();
-	
-
-
-	//convert military time to standard time
-
-	if (hours < 0) {
+    setInterval(function(){
+       var date = new Date();
+	   var hours = (12 - (date.getHours()));
+	   // var hours = date.getHours();
+       var minutes = date.getMinutes();
+       var seconds = date.getSeconds();
+	  //convert military time to standard time
+	   if (hours < 0) {
 		hours = hours * -1;
-	} else if (hours == 00) {
+	   } else if (hours == 00) {
 		hours = 12;
-	} else {
+	   } else {
 		hours = hours;
-	}
-	
-	var currentTime = h2.textContent =hours + ":" + minutes;
-	
-
-	if (alarmTime == currentTime) {
+	   }
+	   var currentTime = clk.textContent =hours + ":" + minutes;
+	   if (alarmTime == currentTime) {
         ///alert("Hello! I am an alert box!!");
        // console.log("Hello! I am an alert box!!");
         sound.play()
-
+        document.getElementById("alarm-h").value = "00";
+        document.getElementById("alarm-m").value = "00";
+        setTimeout('sound.pause()', 10000) ;
 		}
-
+        
 },1000);
 
 
@@ -253,6 +250,5 @@ setInterval(function(){
 
 
    
-
 
 
