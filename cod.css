@@ -1,7 +1,8 @@
  body{
      display: grid;
      grid-template-columns: 1fr 5fr;
-     background-color :rgb(214, 235, 157);
+     background-color: rgb(143, 192, 192);
+
  } 
  img{
     width:45%;
@@ -86,8 +87,8 @@ input:hover[type='submit'] {
 }
 
 #clockk input{
-    height: 35px;
-
+    height: 30px;
+border: 1px solid ;
 }
 /* Timer */
 
@@ -104,5 +105,18 @@ input:hover[type='submit'] {
     background-color: rgb(143, 192, 192);
     /* margin: 0 auto; */
     /* background: url('https://www.goodfreephotos.com/albums/other-photos/angel-entering-heaven-with-light.jpg'); */
+}
+
+#alarm-h{
+    border: 1px solid ;
+    height: 25px;
+
+ 
+}
+#alarm-m{
+    border: 1px solid ;
+    height: 25px;
+
+ 
 }
 /* Alarm */
