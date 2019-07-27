@@ -1,0 +1,30 @@
+  
+#mainGrid{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 2px;
+    margin-left: 37%;
+    margin-right: 35%;
+
+}
+.grid{
+    /* border: 1px black solid; */
+    padding: 3px;
+    text-align: start;
+}
+#start{
+    grid-column: 3/4;
+    grid-row: 1/4;
+    
+
+}
+#start button{
+    padding: 35px 3px;
+    
+
+}
+#text{
+    border: .5px grey solid;
+    margin-left: 5% ;
+    margin-right: 5%;
+}
