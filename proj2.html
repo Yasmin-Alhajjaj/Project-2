@@ -7,54 +7,82 @@
     <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade|Covered+By+Your+Grace" rel="stylesheet">
 </head>
 <body >
+    <div id="gridd">
     <!-- For todo list -->
     <div id="part1"  >
         <h2>My To Do List</h2>
         <form id="note">
-                <input id="input" type="text" placeholder="Task Title..." >
+                <input id="input" type="text" placeholder="Task Title..."  >
                 <input type="submit" value="Add" >
         </form>
         <ul title="Click to delete; drag to reorder"></ul>
     </div>
-    <div>
+    <div id="main">
     <center>
-        <h1> Crazy Clock </h1>
-        <h3> Local-Time </h3>
-        <div id="localclock"></div>
-        <div><img id="image" src="https://wpart.org/wp-content/uploads/2016/10/talk-is-cheap-show-me-the-code.-linus-torvalds.jpg" style="width:50%;" height="350"> </div>
+        
+        <!-- <h3> Local-Time </h3> -->
+        
+        <!-- <div><img id="image" src="https://wpart.org/wp-content/uploads/2016/10/talk-is-cheap-show-me-the-code.-linus-torvalds.jpg" style="width:50%;" height="350"> </div> -->
         <div >
             <!-- For input Timer -->
+            <h2>Timer:</h2>
             <div id="clockk">
-                 <h2>Timer:</h2><input type="text" id="hour" placeholder="00" size="3" value = "00"/> 
-                :<input type="text" id="minute" placeholder="00" size="3" value = "00"/>  
-                :<input type="text" id="second" placeholder="00" size="3" value = "00"></div>
-            
-            <br>
-           <!-- Button for timer -->
-            <div  id="Button">
-                <input type="button" name="onstart" value="Start" id="btn1" onclick="startTimer()" />
-                <input type="button" name="onstop" value="Stop" id="btn2" onclick="stopTimer()" disabled/>
-                <input type="button" name="onrest" value="Reset" id="btn3" onclick="Reset()" /></div>
-            <!-- For return How much become Time after adding timer  -->
-            <div id=return>return Time &nbsp; <span id="return_h">00</span>:<span id="return_m">00</span></div>
-            <!-- For Alarm Time -->
-            <div id="Alarm">
-            <div><h2>Set Alarm!</h2></div>
-            <div><input type="text" size="3" id="alarm-h" placeholder="00">:<input type="text" size="3" id="alarm-m"placeholder="00"></div>
-            <!-- This input type of This input is image  -->
-            <br>
-            <div><button  id="set" onclick="playon()" >set Alaerm</button> </div>
+                
+                <div> <input type="text" id="hour" placeholder="00" size="3" value = "00"/>  </div>
+
+                <div><input type="text" id="minute" placeholder="00" size="3" value = "00"/> </div>
+
+               <div> <input type="text" id="second" placeholder="00" size="3" value = "00"> </div>
             </div>
+
+            <!-- For return How much become Time after adding timer  -->
+            <br> <br><br>
+            <div id=return>return Time &nbsp; <span id="return_h">00</span>:<span id="return_m">00</span></div>
+            <!-- Button for timer -->
+            <br><br>
+
+            <div  id="Button">
+                    <input type="button" name="onstart" value="Start" id="btn1" onclick="startTimer()" />
+                    <input type="button" name="onstop" value="Stop" id="btn2" onclick="stopTimer()" disabled/>
+                    <input type="button" name="onrest" value="Reset" id="btn3" onclick="Reset()" />
+                </div>
+            <br>
+           
+            
+            
         </div>
     </center>
     </div>
 
+
+ <!-- For Alarm Time -->
+    <div id="Alarm">
+        <center>
+        <div><h2>Set Alarm!</h2></div>
+        <div><input type="text" size="3" id="alarm-h" placeholder="00">:<input type="text" size="3" id="alarm-m"placeholder="00"></div>
+        <!-- This input type of This input is image  -->
+        <br>
+        <div><button  id="set" onclick="playon()" >set Alaerm</button> </div>
+    </center>
+    </div>
+
+
+
+
+
+
+
+
+</div>
+
 <!-- tm begin -->
 <div id="timeout" role="alert"  >
-    <!-- <div id="cont">hadeel</div> -->
      <div id="cont" ></div>
 </div>
-    
+<center>
+<h1> Crazy Clock </h1>
+<div id="localclock"></div>
+</center>
 <script src="code.js"></script>
 </body>
 </html>

@@ -1,16 +1,52 @@
  body{
+     background-color: wheat
+ }
+ #gridd{
+     
+     border: #4CAF50 double 10px;
      display: grid;
-     grid-template-columns: 1fr 5fr;
-     background-color: white;
+     grid-template-columns: 2fr 7fr ;
+     grid-template-rows:  2fr 40%;
+     background-color: white; 
+         
 
  } 
- img{
-    width:45%;
+ #main{
+    
+        background:
+          -webkit-linear-gradient(315deg, hsla(137.85, 98.83%, 42.09%, 1) 0%, hsla(137.85, 98.83%, 42.09%, 0) 70%),
+          -webkit-linear-gradient(65deg, hsla(241.23, 94.29%, 40.25%, 1) 10%, hsla(241.23, 94.29%, 40.25%, 0) 80%),
+          -webkit-linear-gradient(135deg, hsla(151.73, 95.64%, 45.3%, 1) 15%, hsla(151.73, 95.64%, 45.3%, 0) 80%),
+          -webkit-linear-gradient(205deg, hsla(200.28, 93.16%, 47.81%, 1) 100%, hsla(200.28, 93.16%, 47.81%, 0) 70%);
+      
+    /* border: 2px solid black; */
+    grid-column: 2/3;
+    /* grid-row: 1/2; */
  }
+ /* nooooot */
+#part1{ 
+    grid-row: 1/3;
+    /* border: 8px double black; */
+    background-color: rgb(255, 235, 121);
+    /* display: inline-block; */
+    /* float: left; */
+    /* height: 1000%; */
+}
+
+ /* img{
+    width:45%;
+ } */
 
  h1{
+
     font-family: 'Bungee Shade', cursive;
-    font-size: 50px;
+    font-size: 90px;
+    color: blue
+  }
+  h2{
+    font-size: 40px;
+    color: darkred
+  
   }
 h3{
     font-family: 'Bungee', cursive;
@@ -20,17 +56,11 @@ h3{
 #localclock{
     font-family: 'Bungee', cursive;
     font-size: 50px;
+    color: blue
 
 }
 
-/* nooooot */
-#part1{ 
-    background-color: rgb(255, 235, 121);
 
-    display: inline-block;
-    float: left;
-    height: 500px;
-}
 ul {
     margin-top: 30px;
     display: inline-block;
@@ -51,6 +81,9 @@ li:first-child {
     font-size:85%;
     color: black;
 }
+#input{
+
+width: 100%;}
 
 input:hover[type='submit'] {
     background-color: rgb(17, 168, 17); 
@@ -70,25 +103,34 @@ input:hover[type='submit'] {
     padding: 13px;
 }
 #btn2{
-    background-color: rgb(238, 39, 13);
+    background-color: rgb(255, 134, 118);
     /* color: white; */
     border-radius: 50%;
     padding: 13px;
 
 }
 #btn3{
-    background-color: #e7e7e7;
+    background-color: aquamarine;
      color: black;
      border-radius: 50%;
      padding: 13px;
 }
 #return{
-    font-size: 20px;
+    font-size: 30px;
+}
+#clockk{
+    display: flex;
+    justify-content: center;
 }
 
+
 #clockk input{
-    height: 30px;
+    height: 100px;
+    width: 70px;
+    text-align: center;
+    font-size: 50px;
 border: 1px solid ;
+
 }
 /* Timer */
 
@@ -96,32 +138,47 @@ border: 1px solid ;
 /* Alarm */
 
 #Alarm{
-    border: 5px dashed rgb(8, 32, 8);
-    border-radius: 20px;
+    /* border: 2px solid red; */
+    grid-column: 2/3;
+    /* grid-row: 1/3; */
+
+    border: 7px dashed rgb(14, 143, 14);
+    /* border-radius: 20px; */
     padding-bottom: 50px;
-    width: 50%;
-    height: 100px;
-    margin: 15px;
-    background-color: rgb(157, 226, 157);
+    /* width: 50%; */
+    /* height: 100px; */
+    /* margin: 15px; */
+    background:
+    -webkit-linear-gradient(315deg, hsla(137.85, 98.83%, 42.09%, 1) 0%, hsla(137.85, 98.83%, 42.09%, 0) 70%),
+    -webkit-linear-gradient(65deg, hsla(241.23, 94.29%, 40.25%, 1) 10%, hsla(241.23, 94.29%, 40.25%, 0) 80%),
+    -webkit-linear-gradient(135deg, hsla(151.73, 95.64%, 45.3%, 1) 15%, hsla(151.73, 95.64%, 45.3%, 0) 80%),
+    -webkit-linear-gradient(205deg, hsla(200.28, 93.16%, 47.81%, 1) 100%, hsla(200.28, 93.16%, 47.81%, 0) 70%);
     /* margin: 0 auto; */
     /* background: url('https://www.goodfreephotos.com/albums/other-photos/angel-entering-heaven-with-light.jpg'); */
 }
 
 #alarm-h{
     border: 1px solid ;
-    height: 25px;
-
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    
  
 }
 #alarm-m{
     border: 1px solid ;
-    height: 25px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+
 }
 
 #set {
     background-color: white; 
     color: black; 
     border: 2px solid #4CAF50;
+    width: 135px;
+    height: 30px;
   }
   
   #set:hover {

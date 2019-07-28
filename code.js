@@ -10,7 +10,7 @@ function myTimer() {
 }
 
 // change back ground Almost every second 
-myElement = document.getElementById("image");
+/* myElement = document.getElementById("image");
 myImgs = [
    "https://wpart.org/wp-content/uploads/2016/10/talk-is-cheap-show-me-the-code.-linus-torvalds.jpg",
    "https://c.pxhere.com/photos/b0/df/potatoes_murder_blood_police_investigations_funny_fun_knife-605399.jpg!d",
@@ -31,7 +31,7 @@ function changePhotos(myElement, myImgs) {
 }
 changePhotos(myElement, myImgs)
 
-
+ */
 
 
 // Todo  small list. USED JQUERY.
