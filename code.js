@@ -51,12 +51,6 @@ var ret_h=0;
 var control;
 var parameter;
 
-// This for false input .return defult
-function defltTime(parameter){
-    parameter=60;
-return parameter;
-}
-
 function down(){  
 if(start===0&&document.getElementById("minute")&&document.getElementById("second")&&document.getElementById("hour")){
 
@@ -84,7 +78,8 @@ if(cth===0 && ctm===0 && cts===0) {
     document.getElementById("hour").value=cth;
 
     if(ctm>60)
-    document.getElementById("minute").value=defltTime(ctm);
+    ctm=60;
+    document.getElementById("minute").value=ctm;
 
     if(cts>60)
     cts=60;
