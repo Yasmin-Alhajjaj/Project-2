@@ -177,7 +177,7 @@ control= setTimeout('down()', 1000);
 // The bottun START become disabled ,and bottun STOP become enable.
 // The input becom disabled for not change the value through start timer.
 function startTimer(){
-    if(document.getElementById('hour').value == "00")
+    if(document.getElementById('hour').value == "00"&&document.getElementById('minute').value == "00"&&document.getElementById('second').value == "00")
     {return false}
    down();
    document.getElementById('btn1').setAttribute('disabled', 'disabled');
@@ -211,7 +211,8 @@ function Reset(){
     
     cth=0;
     ctm=0;
-    cts=0;}
+    cts=0;
+return false;}
 
 // For Alarm Time.
 // ~new Audio~ for access to the properties of audio elements and control it.
