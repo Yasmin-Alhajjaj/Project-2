@@ -40,7 +40,16 @@ $(document).ready(function($) {
         //if input text ,take value input and put in new li.
         if ($('#input').val() !== '') {
             var newTask = $('#input').val();
-            var newLi = $('<li>' + newTask + '</li>' );
+            //var xBtn = document.createElement('span');
+            //xBtn.style.float = 'right';
+           // xBtn.style.backgroundColor = 'red';
+          // xBtn.innerHTML = "  X";
+            // xBtn.addEventListener('click', function(e) {
+            //     var parent = e.path[1]; // parent == list item === newLi)
+            //     parent.remove();
+            // })
+            var newLi = $('<li>' + newTask +'</li>' );
+           // newLi.append(xBtn);
             // If click on text it remove from list
             newLi.on('click', function() {
                 $(this).remove();
@@ -92,6 +101,22 @@ if(cth===0 && ctm===0 && cts===0) {
     document.getElementById("second").value=cts+"0";
     document.getElementById('btn1').disabled= false;
     document.getElementById('btn2').disabled= true;
+
+    document.getElementById("timeout").style.display =  'block';
+
+// pop timer tm begin
+timer=setInterval(count,1000);
+totalsecond=0;
+function count(){
+   ++totalsecond;
+   hour=Math.floor(totalsecond/3600);
+   minute=Math.floor((totalsecond-hour*3600)/60);
+   second=totalsecond-(hour*3600+minute*60);
+   if(second<10){second= "0"+ second}
+   if(minute<10){minute= "0"+ minute}
+   if(hour<10){hour= "0"+ hour}
+   document.getElementById("cont").innerHTML=hour+" :"+minute+" :"+second;
+}
     return false;
 }else{
     // this conditions if input false number.    
@@ -152,6 +177,8 @@ control= setTimeout('down()', 1000);
 // The bottun START become disabled ,and bottun STOP become enable.
 // The input becom disabled for not change the value through start timer.
 function startTimer(){
+    if(document.getElementById('hour').value == "00")
+    {return false}
    down();
    document.getElementById('btn1').setAttribute('disabled', 'disabled');
    document.getElementById('btn2').disabled = false;
@@ -224,6 +251,16 @@ function playon(){
         
 },1000);
 }
+
+
+/////////poooooooop
+var modal = document.getElementById('timeout');
+ window.onclick = function(event) {
+   if (event.target === modal){
+     modal.style.display = "none";
+   }
+ }
+ 
 
 
 
