@@ -116,7 +116,16 @@ border: 1px solid ;
 #alarm-m{
     border: 1px solid ;
     height: 25px;
-
- 
 }
+
+#set {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+  }
+  
+  #set:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
 /* Alarm */

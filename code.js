@@ -86,6 +86,10 @@ start=1;
 }
 if(cth===0 && ctm===0 && cts===0) {
     start = 0;
+    document.getElementById('second').disabled= false;
+    document.getElementById('minute').disabled= false;
+    document.getElementById('hour').disabled= false;
+    document.getElementById("second").value=cts+"0";
     document.getElementById('btn1').disabled= false;
     document.getElementById('btn2').disabled= true;
     return false;
@@ -120,12 +124,13 @@ if(cth===0 && ctm===0 && cts===0) {
                 cts=59;
             }
 
-        }        
+        }       
 
 }
 document.getElementById('hour').innerHTML = cth;
 document.getElementById('minute').innerHTML = ctm;
 document.getElementById('second').innerHTML = cts;
+
  // For Return time after adding timer. 
 ret_h=date.getHours()+cth;
 ret_m=date.getMinutes()+ctm+1;
