@@ -1,7 +1,7 @@
  body{
      display: grid;
      grid-template-columns: 1fr 5fr;
-     background-color: rgb(202, 255, 202);
+     background-color: white;
 
  } 
  img{

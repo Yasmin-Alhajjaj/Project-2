@@ -10,11 +10,29 @@ function myTimer() {
 }
 
 // change back ground Almost every second 
-/* setInterval ( setColor , 10000 );
-function setColor() {
-  var ground = document.body;
-  ground.style.backgroundColor = ground.style.backgroundColor == "lightgreen" ? "#FBCEB1" : "lightgreen";
-} */
+myElement = document.getElementById("image");
+myImgs = [
+   "https://wpart.org/wp-content/uploads/2016/10/talk-is-cheap-show-me-the-code.-linus-torvalds.jpg",
+   "https://c.pxhere.com/photos/b0/df/potatoes_murder_blood_police_investigations_funny_fun_knife-605399.jpg!d",
+   "https://c.pxhere.com/photos/70/ee/not_hear_not_see_do_not_speak_funny_kermit_frog_cute_fun-398823.jpg!d",
+   " https://c.pxhere.com/photos/b3/63/blur_close_up_cooked_crop_delicious_focus_food_french_fries-921173.jpg!d",
+   " https://c.pxhere.com/photos/2c/f5/paprika_sad_food_veggie_delicious_eat_red_nutrition-607337.jpg!d",
+   "https://c.pxhere.com/photos/50/7f/kermit_cup_drink_coffee_break_coffee_break_coffee_cup_funny_cute-1164857.jpg!d",
+   "https://c.pxhere.com/photos/3c/ee/kermit_frog_cheeseburger_hamburger_funny_animal_stuffed_animal_soft_toy-494566.jpg!d",
+   "https://c.pxhere.com/photos/30/c6/kermit_cup_drink_coffee_break_coffee_break_coffee_cup_funny_cute-1164853.jpg!d",
+   "https://www.designbolts.com/wp-content/uploads/2013/06/Quotes-For-Web-Developers-1.jpg"
+];
+// console.log(myImgs[11]);
+function changePhotos(myElement, myImgs) {
+   setInterval(function () {
+       myRandomImg = Math.floor(Math.random() * myImgs.length);
+       myElement.src = myImgs[myRandomImg];
+   }, 2000);
+}
+changePhotos(myElement, myImgs)
+
+
+
 
 // Todo  small list. USED JQUERY.
 $(document).ready(function($) {
@@ -22,7 +40,7 @@ $(document).ready(function($) {
         //if input text ,take value input and put in new li.
         if ($('#input').val() !== '') {
             var newTask = $('#input').val();
-            var newLi = $('<li>' + newTask + '</li>');
+            var newLi = $('<li>' + newTask + '</li>' );
             // If click on text it remove from list
             newLi.on('click', function() {
                 $(this).remove();
@@ -99,8 +117,11 @@ if(cth===0 && ctm===0 && cts===0) {
                 ctm=59;
                 cth--;}
             if(ctm>0&&cth>0){
-                cts=59;}
-        }
+                cts=59;
+            }
+
+        }        
+
 }
 document.getElementById('hour').innerHTML = cth;
 document.getElementById('minute').innerHTML = ctm;
