@@ -219,7 +219,7 @@ function playon(){
         sound.play()
         document.getElementById("alarm-h").value = "00";
         document.getElementById("alarm-m").value = "00";
-        setTimeout('sound.pause()', 10000) ;
+        setTimeout('sound.pause()', 20000) ;
 		}
         
 },1000);
