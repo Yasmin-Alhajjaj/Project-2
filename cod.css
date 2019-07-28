@@ -83,7 +83,8 @@ li:first-child {
 }
 #input{
 
-width: 100%;}
+width: 98%;
+height: 50px;}
 
 input:hover[type='submit'] {
     background-color: rgb(17, 168, 17); 
@@ -199,15 +200,14 @@ border: 1px solid ;
     /* display:flex; */
     /* justify-content: center; */
    display: none;
- }
+}
  #cont{
     width: 300px;
     height: 300px;
     position: relative;
-    background-color: red ;
+    background-color: rgb(0, 255, 170) ;
     font-size: 50px;
-    text-align: center;
-    
- }
+    margin-top: 250px;
+     }
 
 /* poooop */
