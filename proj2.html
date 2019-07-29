@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
     <title>Timer Clock</title>
     <link rel="stylesheet" type="text/css" href="cod.css">
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade|Covered+By+Your+Grace" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body >
+    
+        <div id ="t">
+                <center>
+                <h1> Crazy Clock </h1>
+                <div id="localclock"></div>
+                </center>
+                </div>
+
+
+
     <div id="gridd">
     <!-- For todo list -->
     <div id="part1"  >
         <h2>My To Do List</h2>
         <form id="note">
                 <input id="input" type="text" placeholder="Task Title..."  >
-                <input type="submit" value="Add" >
+                <input type="submit"  value="Add"  >
         </form>
         <ul title="Click to delete; drag to reorder"></ul>
     </div>
@@ -23,7 +35,7 @@
         <!-- <h3> Local-Time </h3> -->
         
         <!-- <div><img id="image" src="https://wpart.org/wp-content/uploads/2016/10/talk-is-cheap-show-me-the-code.-linus-torvalds.jpg" style="width:50%;" height="350"> </div> -->
-        <div >
+        <div id="timerr">
             <!-- For input Timer -->
             <h2>Timer:</h2>
             <div id="clockk">
@@ -36,7 +48,7 @@
             </div>
 
             <!-- For return How much become Time after adding timer  -->
-            <br> <br><br>
+            <br><br>
             <div id=return>return Time &nbsp; <span id="return_h">00</span>:<span id="return_m">00</span></div>
             <!-- Button for timer -->
             <br><br>
@@ -81,10 +93,8 @@
      <div id="cont" ></div>
     </center>
 </div>
-<center>
-<h1> Crazy Clock </h1>
-<div id="localclock"></div>
-</center>
+
 <script src="code.js"></script>
+
 </body>
 </html>

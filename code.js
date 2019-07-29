@@ -30,8 +30,8 @@ function changePhotos(myElement, myImgs) {
    }, 2000);
 }
 changePhotos(myElement, myImgs)
-
  */
+
 
 
 // Todo  small list. USED JQUERY.
@@ -259,6 +259,7 @@ var modal = document.getElementById('timeout');
  window.onclick = function(event) {
    if (event.target === modal){
      modal.style.display = "none";
+    
    }
  }
  
