@@ -1,3 +1,4 @@
+
 // For localTimer.
 // This ~setInterval~ for repeat The function myTimer every 1 second. 
 // ~new Date()~ This function return present year + month + day + time.
@@ -9,30 +10,6 @@ function myTimer() {
   document.getElementById("localclock").innerHTML = time_now;
 }
 
-// change back ground Almost every second 
-/* myElement = document.getElementById("image");
-myImgs = [
-   "https://wpart.org/wp-content/uploads/2016/10/talk-is-cheap-show-me-the-code.-linus-torvalds.jpg",
-   "https://c.pxhere.com/photos/b0/df/potatoes_murder_blood_police_investigations_funny_fun_knife-605399.jpg!d",
-   "https://c.pxhere.com/photos/70/ee/not_hear_not_see_do_not_speak_funny_kermit_frog_cute_fun-398823.jpg!d",
-   " https://c.pxhere.com/photos/b3/63/blur_close_up_cooked_crop_delicious_focus_food_french_fries-921173.jpg!d",
-   " https://c.pxhere.com/photos/2c/f5/paprika_sad_food_veggie_delicious_eat_red_nutrition-607337.jpg!d",
-   "https://c.pxhere.com/photos/50/7f/kermit_cup_drink_coffee_break_coffee_break_coffee_cup_funny_cute-1164857.jpg!d",
-   "https://c.pxhere.com/photos/3c/ee/kermit_frog_cheeseburger_hamburger_funny_animal_stuffed_animal_soft_toy-494566.jpg!d",
-   "https://c.pxhere.com/photos/30/c6/kermit_cup_drink_coffee_break_coffee_break_coffee_cup_funny_cute-1164853.jpg!d",
-   "https://www.designbolts.com/wp-content/uploads/2013/06/Quotes-For-Web-Developers-1.jpg"
-];
-// console.log(myImgs[11]);
-function changePhotos(myElement, myImgs) {
-   setInterval(function () {
-       myRandomImg = Math.floor(Math.random() * myImgs.length);
-       myElement.src = myImgs[myRandomImg];
-   }, 2000);
-}
-changePhotos(myElement, myImgs)
- */
-
-
 
 // Todo  small list. USED JQUERY.
 $(document).ready(function($) {
@@ -40,20 +17,17 @@ $(document).ready(function($) {
         //if input text ,take value input and put in new li.
         if ($('#input').val() !== '') {
             var newTask = $('#input').val();
-            //var xBtn = document.createElement('span');
-            //xBtn.style.float = 'right';
-           // xBtn.style.backgroundColor = 'red';
-          // xBtn.innerHTML = "  X";
-            // xBtn.addEventListener('click', function(e) {
-            //     var parent = e.path[1]; // parent == list item === newLi)
-            //     parent.remove();
-            // })
+        // If click on X it remove li from list
+            var xBtn = document.createElement('span');
+            xBtn.style.float = 'right';
+           xBtn.style.backgroundColor = 'white';
+          xBtn.innerHTML = "  X ";
+            xBtn.addEventListener('click', function(e) {
+                var parent = e.path[1]; // parent == list item === newLi)
+                parent.remove();
+            })
             var newLi = $('<li>' + newTask +'</li>' );
-           // newLi.append(xBtn);
-            // If click on text it remove from list
-            newLi.on('click', function() {
-                $(this).remove();
-            });
+           newLi.append(xBtn);
             //take the input and empty the input
             $('ul').prepend(newLi); 
             $('#input').val('');
@@ -80,7 +54,6 @@ var parameter;
 
 function down(){  
 if(start===0&&document.getElementById("minute")&&document.getElementById("second")&&document.getElementById("hour")){
-
 cth=parseInt(document.getElementById("hour").value);
 ctm=parseInt(document.getElementById("minute").value);
 cts=parseInt(document.getElementById("second").value);
@@ -95,6 +68,8 @@ start=1;
 }
 if(cth===0 && ctm===0 && cts===0) {
     start = 0;
+    sound.play()
+
     document.getElementById('second').disabled= false;
     document.getElementById('minute').disabled= false;
     document.getElementById('hour').disabled= false;

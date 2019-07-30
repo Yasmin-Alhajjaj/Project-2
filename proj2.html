@@ -1,100 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
     <title>Timer Clock</title>
     <link rel="stylesheet" type="text/css" href="cod.css">
-    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade|Covered+By+Your+Grace" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
-<body >
-    
-        <div id ="t">
-                <center>
-                <h1> Crazy Clock </h1>
-                <div id="localclock"></div>
-                </center>
-                </div>
 
-
-
-    <div id="gridd">
-    <!-- For todo list -->
-    <div id="part1"  >
+<body>
+    <div id="lista">
+        <!-- For todo list -->
         <h2>My To Do List</h2>
         <form id="note">
-                <input id="input" type="text" placeholder="Task Title..."  >
-                <input type="submit"  value="Add"  >
-        </form>
-        <ul title="Click to delete; drag to reorder"></ul>
+
+        <input id="input" type="text" placeholder="Task Title...">
+        <input type="submit" value="Add">
+    </form>
+    <ul title="Click to delete; drag to reorder"></ul>
+
+
     </div>
-    <div id="main">
-    <center>
-        
-        <!-- <h3> Local-Time </h3> -->
-        
-        <!-- <div><img id="image" src="https://wpart.org/wp-content/uploads/2016/10/talk-is-cheap-show-me-the-code.-linus-torvalds.jpg" style="width:50%;" height="350"> </div> -->
-        <div id="timerr">
-            <!-- For input Timer -->
-            <h2>Timer:</h2>
-            <div id="clockk">
-                
-                <div> <input type="text" id="hour" placeholder="00" size="3" value = "00"/>  </div>
+    <div id="LOCAL">
+        <center>
+            <!-- LOCAL-clock -->
+            <h1> Crazy Clock </h1>
+            <div id="localclock"></div>
+        </center>
+    </div>
 
-                <div><input type="text" id="minute" placeholder="00" size="3" value = "00"/> </div>
-
-               <div> <input type="text" id="second" placeholder="00" size="3" value = "00"> </div>
-            </div>
-
-            <!-- For return How much become Time after adding timer  -->
-            <br><br>
-            <div id=return>return Time &nbsp; <span id="return_h">00</span>:<span id="return_m">00</span></div>
-            <!-- Button for timer -->
-            <br><br>
-
-            <div  id="Button">
-                    <input type="button" name="onstart" value="Start" id="btn1" onclick="startTimer()" />
-                    <input type="button" name="onstop" value="Stop" id="btn2" onclick="stopTimer()" disabled/>
-                    <input type="button" name="onrest" value="Reset" id="btn3" onclick="Reset()" />
+    
+    <div id="Timer">
+        <center>
+            <div>
+                <!-- For input Timer -->
+                <h2>Timer:</h2>
+                <div id="clock">
+                    <input type="text" id="hour"  value="00" > 
+                    <input type="text" id="minute"  value="00"> 
+                    <input type="text" id="second" value="00">
                 </div>
-            <br>
-           
-            
-            
-        </div>
-    </center>
+    
+                <!-- For return How much become Time after adding timer  -->
+                <br><br>
+                <div id=return>return Time &nbsp; <span id="return_h">00</span>:<span id="return_m">00</span></div>
+                <br><br>
+                <!-- Button for timer -->
+                <div >
+                    <input type="button" class="btn btn-outline-success" name="onstart" value="Start" id="btn1" onclick="startTimer()" />
+                    <input type="button" class="btn btn-outline-danger" name="onstop"  value="Stop" id="btn2" onclick="stopTimer()" disabled />
+                    <input type="button" class="btn btn-outline-info" name="onrest" value="Reset" id="btn3" onclick="Reset()" />
+                </div>
+                <br>
+            </div>
+        </center>
     </div>
 
 
- <!-- For Alarm Time -->
+    <!-- For Alarm Time....... -->
     <div id="Alarm">
         <center>
-        <div><h2>Set Alarm!</h2></div>
-        <div><input type="text" size="3" id="alarm-h" placeholder="00">:<input type="text" size="3" id="alarm-m"placeholder="00"></div>
-        <!-- This input type of This input is image  -->
-        <br>
-        <div><button  id="set" onclick="playon()" >set Alaerm</button> </div>
-    </center>
+                <h2>Set Alarm!</h2>
+             <div>
+                <input type="text" size="3" id="alarm-h" placeholder="00">
+                <input type="text" size="3" id="alarm-m" placeholder="00">
+            </div>
+            <br>
+            <div><button id="set" onclick="playon()" class="btn btn-secondary btn-lg btn-block">set Alaerm</button> </div>
+        </center>
     </div>
 
+    <!-- tm begin.......... -->
+    <div id="timeout" role="alert">
+        <center>
+            <div id="cont"></div>
+        </center>
+    </div>
 
-
-
-
-
-
-
-</div>
-
-<!-- tm begin -->
-<div id="timeout" role="alert"  >
-    <center>
-     <div id="cont" ></div>
-    </center>
-</div>
-
-<script src="code.js"></script>
-
+    <script src="code.js"></script>
 </body>
 </html>
