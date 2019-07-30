@@ -110,6 +110,7 @@ input:hover[type='submit'] {
 #btn1:hover{
     font-size: 3em;
     font-weight: 1000;
+    background-color: green;
 }
 #btn2{
     color: rgb(255, 119, 119);
