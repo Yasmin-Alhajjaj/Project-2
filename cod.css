@@ -74,6 +74,7 @@ ul {
     cursor: move;
     position: absolute;
     left:1px;
+    
 }
 li {
     color: rgb(151, 141, 212);
@@ -81,6 +82,7 @@ li {
     border: #ccf solid 1px;
     border-radius: 20%;
     padding: 5px;
+    
 }
 #input{
     width: 75%;

@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div id="lista">
+    <div id="lista" >
         <!-- For todo list -->
         <h2>My To Do List</h2>
         <form id="note">
@@ -24,7 +24,7 @@
     <div id="LOCAL">
         <center>
             <!-- LOCAL-clock -->
-            <h1> Crazy Clock </h1>
+            <h1> Y&M Clock </h1>
             <div id="localclock"></div>
         </center>
     </div>
@@ -35,7 +35,10 @@
             <div>
                 <!-- For input Timer -->
                 <h2>Timer:</h2>
+                <form id="myForm">
+
                 <div id="clock">
+
                     <input type="text" id="hour"  value="00" > 
                     <input type="text" id="minute"  value="00"> 
                     <input type="text" id="second" value="00">
@@ -52,6 +55,8 @@
                     <input type="button" class="btn btn-outline-info" name="onrest" value="Reset" id="btn3" onclick="Reset()" />
                 </div>
                 <br>
+            </form>
+
             </div>
         </center>
     </div>
@@ -73,7 +78,7 @@
     <!-- tm begin.......... -->
     <div id="timeout" role="alert">
         <center>
-            <div id="cont"></div>
+            <div id="cont"> </div>
         </center>
     </div>
 

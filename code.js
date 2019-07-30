@@ -51,6 +51,7 @@ var ret_m=0;
 var ret_h=0;
 var control;
 var parameter;
+var off=0;
 
 function down(){  
 if(start===0&&document.getElementById("minute")&&document.getElementById("second")&&document.getElementById("hour")){
@@ -66,7 +67,7 @@ document.getElementById("minute").value=ctm;
 document.getElementById("second").value=cts;
 start=1;
 }
-if(cth===0 && ctm===0 && cts===0) {
+if(cth===0 && ctm===0 && cts===0&&off==0) {
     start = 0;
     sound.play()
 
@@ -90,10 +91,11 @@ function count(){
    if(second<10){second= "0"+ second}
    if(minute<10){minute= "0"+ minute}
    if(hour<10){hour= "0"+ hour}
-   document.getElementById("cont").innerHTML=hour+" :"+minute+" :"+second;
+   document.getElementById("cont").innerHTML=hour+" :"+minute+" :"+second+" Hadeel is coming";
 }
     return false;
 }else{
+    if(off==1){return false;}
     // this conditions if input false number.    
     if(cth>12)
     cth=12;
@@ -154,6 +156,10 @@ control= setTimeout('down()', 1000);
 function startTimer(){
     if(document.getElementById('hour').value == "00"&&document.getElementById('minute').value == "00"&&document.getElementById('second').value == "00")
     {return false}
+    off=0;
+    cth=parseInt(document.getElementById("hour").value);
+    ctm=parseInt(document.getElementById("minute").value);
+    cts=parseInt(document.getElementById("second").value);
    down();
    document.getElementById('btn1').setAttribute('disabled', 'disabled');
    document.getElementById('btn2').disabled = false;
@@ -183,11 +189,14 @@ function Reset(){
     document.getElementById('second').disabled= false;
     document.getElementById('minute').disabled= false;
     document.getElementById('hour').disabled= false;
-    
+    off=1;
     cth=0;
     ctm=0;
     cts=0;
-return false;}
+
+
+ 
+}
 
 // For Alarm Time.
 // ~new Audio~ for access to the properties of audio elements and control it.
